@@ -1,4 +1,6 @@
 import 'package:fe_jurusanku/pages/home/home_page.dart';
+import 'package:fe_jurusanku/pages/jurusan_page.dart';
+import 'package:fe_jurusanku/pages/main_page.dart';
 import 'package:fe_jurusanku/pages/sign_in_page.dart';
 import 'package:flutter/material.dart';
 import 'pages/splash_page.dart';
@@ -12,7 +14,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/' :(context) => SplashPage(),
         '/sign-in' :(context) => SignInPage(),
-        '/home' :(context) => HomePage(),
+        '/home' :(context) => MainPage(),
+        '/jurusan' :(context) => JurusanPage(),
       },
     );
   }

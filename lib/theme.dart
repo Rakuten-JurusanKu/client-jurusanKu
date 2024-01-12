@@ -109,6 +109,11 @@ TextStyle button = GoogleFonts.roboto(
   letterSpacing: 0.1
 );
 
+TextStyle titleHome = GoogleFonts.plusJakartaSans(
+  fontSize: 36,
+  height: 44/36,
+);
+
 /* Color System */
 
 const Color white = Color(0xffffffff);
@@ -117,4 +122,20 @@ const Color gray = Color(0xffCAC4D0);
 const Color transparent = Colors.transparent;
 const Color primary = Color(0xff822F9F);
 const Color onPrimary = Color(0xffFCF4FF);
+const Color primary30 = Color(0xff831CA6);
+const Color primary50 = Color(0xffD968FF);
+const Color primary90 = Color(0xffF6E5FB);
+const Color surface = Color(0xffFEF7FF);
+const Color surface2 = Color(0xff5D4FDD);
+const Color primaryFixed = Color(0xffF6E5FB);
+const Color primaryFixedDim = Color(0xffF1CAFF);
 const Color label = Color(0xff1D1B20);
+const Color neutral60 = Color(0xff938F96);
+const Color tertiary90 = Color(0xffFECDEE);
+const Color tertiary99 = Color(0xffFDEFF8);
+const Color tertiary20 = Color(0xffA80371);
+const Color secondary95 = Color(0xffEEF4FF);
+const Color titleCard = Color(0xff566787);
+const Color buttonCard = Color(0xffFFE3F6);
+const Color primaryDark = Color(0xffE8A3FF);
+const Color surface3 = Color(0xffCAC4D0);

@@ -29,7 +29,7 @@ class SplashPage extends StatelessWidget {
                   backgroundColor: white,
                   fixedSize: Size(260, 40)
                 ),
-                child: Text("Login",style: button.copyWith(color: primary),)
+                child: Text("Login",style: button.copyWith(color: primary,fontWeight: bold),)
             ),
             SizedBox(height: 16,),
             OutlinedButton(
@@ -41,7 +41,7 @@ class SplashPage extends StatelessWidget {
                   ),
                   fixedSize: Size(260, 40)
                 ),
-                child: Text('Sign Up',style: button.copyWith(color: white),)
+                child: Text('Sign Up',style: button.copyWith(color: white,fontWeight: bold),)
             )
           ],
         ),
