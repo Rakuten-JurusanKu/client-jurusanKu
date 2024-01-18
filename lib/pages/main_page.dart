@@ -1,7 +1,9 @@
+import 'package:fe_jurusanku/pages/bookmark_page.dart';
 import 'package:fe_jurusanku/pages/discussion_page.dart';
-import 'package:fe_jurusanku/pages/home/home_page.dart';
-import 'package:fe_jurusanku/pages/question_page.dart';
+import 'package:fe_jurusanku/pages/home_page.dart';
+import 'package:fe_jurusanku/pages/test/personality_test_page.dart';
 import 'package:fe_jurusanku/theme.dart';
+import 'package:fe_jurusanku/utils/ScreenArguments.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -13,6 +15,12 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int currentIndex = 1;
+
+  void changeIndex(int newIndex) {
+    setState(() {
+      currentIndex = newIndex;
+    });
+  }
 
   Widget customBottomNav() {
     return BottomNavigationBar(
@@ -53,6 +61,18 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.bookmark,color: primary,),
+            label: '',
+            activeIcon: Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    color: primaryFixedDim,
+                    borderRadius: BorderRadius.circular(100)
+                ),
+                child: Icon(Icons.bookmark,color: primary,size: 20,)
+            ),
+          ),
+          BottomNavigationBarItem(
               icon: Image.asset('assets/discussion.png',width: 25,color: primary,),
               label: '',
             activeIcon: Container(
@@ -68,16 +88,18 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  Widget body() {
+  Widget body({bool beforeTest = false}) {
     switch (currentIndex) {
       case 0:
-        return QuestionPage();
+        return PersonalityTestPage();
       case 1:
-        return HomePage();
+        return HomePage(currentIndex: currentIndex,onIndexChanged: changeIndex,beforeTest: beforeTest,);
       case 2:
+        return BookmarkPage();
+      case 3:
         return DiscussionPage();
       default:
-        return HomePage();
+        return HomePage(currentIndex: currentIndex,onIndexChanged: changeIndex,beforeTest: beforeTest);
     }
   }
 
@@ -85,9 +107,24 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
+    bool beforeTest = false;
+
+    final args = ModalRoute.of(context)?.settings.arguments as ScreenArguments?;
+    if(args != null){
+      print('oke');
+      setState(() {
+        beforeTest = true;
+      });
+      print(beforeTest);
+    }else{
+      print(" nill");
+
+    }
+
+
     return Scaffold(
       bottomNavigationBar: customBottomNav(),
-      body: body(),
+      body: body(beforeTest: !beforeTest),
     );
   }
 }

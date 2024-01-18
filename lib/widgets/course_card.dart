@@ -59,8 +59,12 @@ class _CourseCardState extends State<CourseCard> {
           SizedBox(height: 10,),
           ElevatedButton(
               onPressed: (){
-                setIsView(!_isView);
+                if(_isView){
+                  Navigator.pushNamed(context, '/materi');
+                }
+                setIsView(true);
               },
+
               child: Text('${_isView ? 'View' : 'Enroll'}',style: button.copyWith(color: primary,fontWeight: bold),),
             style: ElevatedButton.styleFrom(
               backgroundColor: buttonCard,

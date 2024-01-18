@@ -42,6 +42,12 @@ TextStyle headlineLarge = GoogleFonts.plusJakartaSans(
   height: 40/32,
 );
 
+TextStyle numberTest = GoogleFonts.plusJakartaSans(
+  fontSize: 40,
+  height: 28/40,
+  fontWeight: bold
+);
+
 TextStyle headlineMedium = GoogleFonts.plusJakartaSans(
   fontSize: 28,
   height: 36/28,
@@ -139,3 +145,5 @@ const Color titleCard = Color(0xff566787);
 const Color buttonCard = Color(0xffFFE3F6);
 const Color primaryDark = Color(0xffE8A3FF);
 const Color surface3 = Color(0xffCAC4D0);
+const Color buttonBack = Color(0xffECEAF4);
+const Color black = Colors.black;

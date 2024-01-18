@@ -1,5 +1,5 @@
+import 'package:fe_jurusanku/utils/ScreenArguments.dart';
 import 'package:fe_jurusanku/widgets/course_card.dart';
-import 'package:fe_jurusanku/widgets/jurusan_card.dart';
 import 'package:flutter/material.dart';
 import 'package:fe_jurusanku/theme.dart';
 
@@ -106,7 +106,15 @@ class JurusanPage extends StatelessWidget {
       backgroundColor: surface2,
       appBar: AppBar(
         backgroundColor: surface2,
-        leading: BackButton(color: white,),
+        leading: BackButton(color: white,onPressed: (){
+          Navigator.pushNamed(
+            context,
+            '/home',
+            arguments: ScreenArguments(
+              false,
+              'assets/DiscoLight_Icon.png',
+            ),);
+        },),
         title: Text('Jurusan',style: titleMedium.copyWith(color: white),),
         centerTitle: true,
       ),

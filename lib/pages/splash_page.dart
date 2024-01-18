@@ -33,11 +33,12 @@ class SplashPage extends StatelessWidget {
             ),
             SizedBox(height: 16,),
             OutlinedButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.pushNamed(context, "/sign-up");
+                },
                 style: OutlinedButton.styleFrom(
                   side: BorderSide(
                     color: white,
-
                   ),
                   fixedSize: Size(260, 40)
                 ),
